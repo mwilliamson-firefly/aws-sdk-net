@@ -391,7 +391,11 @@ namespace Firefly.Amazon.SessionProvider
 
                 try
                 {
-                    session = this._table.UpdateItem(lockDoc, LOCK_UPDATE_CONFIG);
+                    session = this._table.UpdateItem(lockDoc, new UpdateItemOperationConfig
+                    {
+                        Expected = new Document { { ATTRIBUTE_SESSION_ID, GetHashKey(sessionId) } },
+                        ReturnValues = ReturnValues.AllNewAttributes
+                    });
                     locked = false;
                 }
                 catch (ConditionalCheckFailedException)

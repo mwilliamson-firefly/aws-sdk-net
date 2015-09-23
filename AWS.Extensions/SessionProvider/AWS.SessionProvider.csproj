@@ -8,7 +8,7 @@
     <ProjectGuid>{65DD8109-6DA4-46A7-A29E-DE712F85010A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Amazon</RootNamespace>
+    <RootNamespace>Firefly.Amazon</RootNamespace>
     <AssemblyName>AWS.SessionProvider</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

@@ -23,14 +23,14 @@ using System.Collections.Specialized;
 using System.Web.SessionState;
 using System.Text;
 using System.Threading;
-
+using Amazon;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.Runtime;
 using Amazon.Util;
 
-namespace Amazon.SessionProvider
+namespace Firefly.Amazon.SessionProvider
 {
     /// <summary>
     /// DynamoDBSessionStateStore is a custom session state provider that can be used inside of an ASP.NET application. Session state is saved 

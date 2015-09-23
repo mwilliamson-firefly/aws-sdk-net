@@ -116,7 +116,6 @@ namespace Firefly.Amazon.SessionProvider
             CONSISTENT_READ_GET.ConsistentRead = true;
 
             LOCK_UPDATE_CONFIG.Expected = new Document();
-            LOCK_UPDATE_CONFIG.Expected[ATTRIBUTE_LOCKED] = false;
             LOCK_UPDATE_CONFIG.ReturnValues = ReturnValues.AllNewAttributes;
         }
 
@@ -514,7 +513,6 @@ namespace Firefly.Amazon.SessionProvider
             else
             {
                 Document expected = new Document();
-                expected[ATTRIBUTE_LOCK_ID] = lockId.ToString();
 
                 // Not really any reason the condition should fail unless we get in some sort of weird
                 // app pool reset mode.
@@ -539,7 +537,6 @@ namespace Firefly.Amazon.SessionProvider
             doc[ATTRIBUTE_EXPIRES] = DateTime.Now.Add(this._timeout);
 
             Document expected = new Document();
-            expected[ATTRIBUTE_LOCK_ID] = lockId.ToString();
 
             try
             {
